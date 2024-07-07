@@ -2,15 +2,15 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import 'katex/dist/katex.min.css';
-import Latex from 'react-latex-next';
-
+//import 'katex/dist/katex.min.css';
+//import Latex from 'react-latex-next';
+/*
 function splits(input: string, separators: string[]): string[] {
     return input.split(new RegExp(separators.join("|"), "g"));
   }
 
 function latexModifier(text: string): JSX.Element{
-  return (<><Latex>{text}</Latex></>)
+  return (<p>{text}</p>)
 }
 
 function codeModifier(text: string): JSX.Element{
@@ -54,7 +54,7 @@ const extractedText = extractTextBetweenTags(inputText);
 console.log('Text between <str> tags:', extractedText.str);
 console.log('Text between <mtr> tags:', extractedText.mtr);
 */
-
+/*
 function textConverter(text: string): JSX.Element {
     var isLatex = text.match(/<latex>/);
     var isCode = text.match(/<codeblock/);
@@ -79,7 +79,7 @@ function textConverter(text: string): JSX.Element {
     }
     return (<p></p>)
 }
-
+*/
 export default function Component() {
     var text = `
   Here is some text.
@@ -119,7 +119,7 @@ export default function Component() {
           <div className="prose prose-gray dark:prose-invert">
             <h1 id="title">Blog Post Title</h1>
             <p>
-              {textConverter(text)}
+              {(text)}
             </p>
             <p>
               Author: <span id="author">John Doe</span>

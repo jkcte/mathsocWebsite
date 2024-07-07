@@ -2,19 +2,21 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-//import 'katex/dist/katex.min.css';
-//import Latex from 'react-latex-next';
-/*
+import 'katex/dist/katex.min.css';
+import Latex from 'react-latex-next';
+
 function splits(input: string, separators: string[]): string[] {
+    console.log("Calling split")
     return input.split(new RegExp(separators.join("|"), "g"));
   }
 
 function latexModifier(text: string): JSX.Element{
-  return (<p>{text}</p>)
+  console.log("Calling Latex Modifier")
+  return (<Latex>{"<br>" + text + "<br>"}</Latex>)
 }
 
 function codeModifier(text: string): JSX.Element{
-
+  console.log("Calling code Modifier")
   return (
     <div className="bg-[#1e1e1e] rounded-md overflow-hidden">
       <div className="bg-[#2d2d2d] px-4 py-2 text-sm font-medium text-[#d4d4d4]">JavaScript</div>
@@ -31,6 +33,7 @@ function extractTextByOrder(text: string): string[] {
     let match;
   
     while ((match = regex.exec(text)) !== null) {
+      console.log("Process Extract Text Convert function");
       if (match[1] !== undefined) {
         queue.push({ type: "latex", match: match[1] });
       } else if (match[2] !== undefined) {
@@ -40,7 +43,7 @@ function extractTextByOrder(text: string): string[] {
   
     return queue.map((item) => item.type);
 }
-/*
+
 const inputText = `
     Here is some text.
     <str>This is a string</str>
@@ -49,12 +52,11 @@ const inputText = `
     And even more text.
     <str>This is a second string</str>
 `;
-
+/*
 const extractedText = extractTextBetweenTags(inputText);
 console.log('Text between <str> tags:', extractedText.str);
 console.log('Text between <mtr> tags:', extractedText.mtr);
 */
-/*
 function textConverter(text: string): JSX.Element {
     var isLatex = text.match(/<latex>/);
     var isCode = text.match(/<codeblock/);
@@ -68,7 +70,8 @@ function textConverter(text: string): JSX.Element {
     textArr = splits(text, ["<latex>", "</latex>", "<codeblock>", "</codeblock>"]);
     var order
     var elementArr = [];
-    for (let index = 1; index < textArr.length; index =+ 2) {
+    for (let index = 1; index < textArr.length; index += 2) {
+        console.log("Process Text Convert function : " + index + "TextArr Lenght : " + textArr.length);
         if (index % 2 == 0) elementArr.push(<p>{textArr[index]}</p>)
         else {
           order = (index - 1)/2
@@ -77,13 +80,18 @@ function textConverter(text: string): JSX.Element {
     
       }
     }
-    return (<p></p>)
+    return (<p>
+      {elementArr.map((benedict) => {
+      console.log(benedict)
+      return (benedict);
+    })}
+    </p>)
 }
-*/
+
 export default function Component() {
     var text = `
   Here is some text.
-  <latex>hello</latex><codeblock>hello</codeblock>
+  <latex>hello {1 + 2} processes $e^+e^-$, gluon-gluon and $\\gamma\\gamma \\to W t\\bar b$. </latex><codeblock>hello</codeblock>
   Some more text.
   <codeblock>This is another string</codeblock>
   And even more text.
@@ -118,9 +126,7 @@ export default function Component() {
         <div className="bg-muted rounded-md p-6 shadow-sm">
           <div className="prose prose-gray dark:prose-invert">
             <h1 id="title">Blog Post Title</h1>
-            <p>
-              {(text)}
-            </p>
+              {textConverter(text)}
             <p>
               Author: <span id="author">John Doe</span>
             </p>

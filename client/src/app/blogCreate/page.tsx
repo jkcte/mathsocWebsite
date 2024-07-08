@@ -12,17 +12,19 @@ function splits(input: string, separators: string[]): string[] {
 
 function latexModifier(text: string): JSX.Element{
   console.log("Calling Latex Modifier")
-  return (<Latex>{"<br>" + text + "<br>"}</Latex>)
+  return (<div className="mt-3 mb-3"><Latex>{text}</Latex></div>)
 }
 
 function codeModifier(text: string): JSX.Element{
   console.log("Calling code Modifier")
   return (
+    <div className="mt-3 mb-3">
     <div className="bg-[#1e1e1e] rounded-md overflow-hidden">
       <div className="bg-[#2d2d2d] px-4 py-2 text-sm font-medium text-[#d4d4d4]">JavaScript</div>
       <p className="p-4 font-mono text-[#d4d4d4]">
         <code>{text}</code>
       </p>
+    </div>
     </div>
   )
 }

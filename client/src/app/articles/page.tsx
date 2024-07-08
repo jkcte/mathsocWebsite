@@ -17,7 +17,7 @@ import {
     CardTitle,
   } from "@/components/ui/card"
 
-  import Link from "next/link"
+import Link from "next/link"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 

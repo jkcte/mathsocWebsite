@@ -1,8 +1,8 @@
-#FEU MathSoc Website
+# FEU MathSoc Website
 
 Welcome to the official repository of the FEU MathSoc Website! This README will guide you through the key features and technical stack of our project.
 
-##Features
+## Features
 
 
 **1. Blog Creation with LaTeX and CodeBlock Support**
@@ -18,9 +18,9 @@ Welcome to the official repository of the FEU MathSoc Website! This README will 
  &nbsp;&nbsp; **GraphQL API:** Utilize a flexible and efficient GraphQL API for querying and mutating tasks.
 
 
-##Technical Stack
+## Technical Stack
 
-&nbsp;###Frontend
+### Frontend
 
 &nbsp;&nbsp;**React:** A JavaScript library for building user interfaces.
 
@@ -29,13 +29,13 @@ Welcome to the official repository of the FEU MathSoc Website! This README will 
 &nbsp;&nbsp;**Vercel:** Hosting platform optimized for Next.js applications.
 
 
-&nbsp;###Backend
+### Backend
 
 &nbsp;&nbsp;**Node.js:** JavaScript runtime for building scalable network applications.
 
 &nbsp;&nbsp;**Supabase:** An open-source Firebase alternative for managing databases and authentication.
 
-&nbsp;#RNSN Stack
+# RNSN Stack
 
 &nbsp;&nbsp;**React:** Frontend library.
 
@@ -46,7 +46,7 @@ Welcome to the official repository of the FEU MathSoc Website! This README will 
 &nbsp;&nbsp;**Node.js:** Backend runtime.
 
 
-##Deployment
+## Deployment
 
 The FEU MathSoc Website is hosted on Vercel, ensuring seamless deployment and high performance for our users.
 

@@ -45,7 +45,7 @@ async function createAccount(data){
 async function selectAccount(email){
     const {result, error} = await supabase
         .from('users')
-        .select()
+        .select('*')
         .eq('StudentNumber', email)
     return result
 }
@@ -63,8 +63,7 @@ async function updateUser(email, changes){
     const {result, error} = await supabase
         .from('users')
         .update(changes)
+        .select('*')
         .eq('StudentNumber', email)
-        .select();
     return result;
 }
-

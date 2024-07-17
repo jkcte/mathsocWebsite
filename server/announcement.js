@@ -13,8 +13,8 @@ async function readAllAnnouncements(){
 async function readAnnouncement(id){
     const {data, error} = await supabase
         .from('announcement')
-        .select()
         .eq('id', id)
+        .select('*')
     return data
 }
 
@@ -30,7 +30,34 @@ async function createAnnouncement(data){
             isPermitte: false
         }])
         .select();
-    return data;
 }
 
-update
+async function updateAnnouncement(id, content){
+    const {result, error} = await supabase
+        .from('announcement')
+        .update(content)
+        .eq('id', id)
+        .select();
+}
+
+
+async function addLikers(id, likersID, currData){
+    currData.push(likersID)
+    const {error} = await supabase
+        .from ('announcement')
+        .update({
+            likersID: currData
+        })
+        .eq('id', id)
+        .select()
+}
+
+async function renderComments(announcementID){
+    const { data, error} = await supabase
+    .from('comments')
+    .select('*')
+    .match({
+        referenceLocation: 'comments',
+        referenceID: announcementID
+    })
+}
